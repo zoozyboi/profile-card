@@ -1,0 +1,136 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,*::before,*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.main {
+    background: $darkCyan;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+}
+.card {
+    background: white;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.card-header {
+    background-image: url('../images/bg-pattern-card.svg');
+    background-size: cover;
+    height: 150px;
+}
+.card-body {
+    text-align: center;
+    line-height: 1.5;
+    .img-holder {
+        height: auto;
+        
+    }
+    .img-holder img{
+        border: 5px solid white;
+        border-radius: 50%;
+        margin-top: -50px;
+        overflow: hidden;
+    }
+    .name-age {
+        font-size: 20px;
+        font-weight: 700;
+        padding-top: 10px;
+    }
+    .age {
+        font-size: 18px;
+        color: $darkGray;
+    }
+    .city {
+        font-size: 16px;
+        font-weight: 400;
+        color: $darkGray;
+        padding: 10px 0 20px 0;
+    }
+}
+
+.card-footer {
+    border-top: 1px solid $darkGray;
+    display: flex;
+    .items {
+        flex: 1;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:first-child {
+            padding-left: 30px;
+        }
+        &:nth-child(2) {
+            padding: 0 25px;
+        }
+        &:last-child {
+            padding-right: 30px;
+        }
+    }
+    .value {
+        font-size: 16px;
+    }
+    .meta {
+        font-size: 13px;
+        font-weight: 400;
+        color: $darkGray;
+    }
+}
+
+.circles {
+    overflow: hidden;
+    
+    img {
+        width: 500px;
+        height: auto;
+    }
+    .c1, .c2 {
+        position: absolute;
+        animation: 5s circles forwards;
+        opacity: 0;
+    }
+
+    .c1 {
+        top: -196px;
+        left: -231px;
+        transform: translate(-100px, -50px);
+    }
+    .c2 {
+        bottom: -160px;
+        right: -254px;
+        transform: translate(100px, 50px);
+    }
+}
+
+@keyframes circles {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
